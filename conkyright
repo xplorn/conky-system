@@ -113,7 +113,7 @@ ${color1}${top_mem name 4}${offset 42}${top_mem pid 4} ${offset 34}${top_mem cpu
 ${color1}${top_mem name 5}${offset 42}${top_mem pid 5} ${offset 34}${top_mem cpu 5} ${offset 30}${top_mem mem 5}
 ${voffset 10}${font Liberation Sans:size=10}${color red}Storage $hr
 ${color}device${goto 100}write${goto 170}read
-${execpi 10 ruby /home/ken/conky/scripts/hard_drives.rb}
+${execpi 10 ruby hard_drives.rb}
 ${voffset 10}${color red}Network $hr
 ${if_up enp5s0}${color}${gw_iface}: ${addr enp5s0}${offset 50}Gateway: ${gw_ip}${endif}
 #Nameserver: ${nameserver}
@@ -121,8 +121,8 @@ Down: ${offset 40}${downspeed enp5s0}
 ${color black}${downspeedgraph enp5s0 999999 CC0000}
 ${color}Up: ${offset 40}${upspeed enp5s0}
 ${color black}${upspeedgraph enp5s0 999999 CC0000}
---#${color0}${execpi 10 ruby /home/ken/conky/scripts/network_general_info.rb}
+--#${color0}${execpi 10 ruby network_general_info.rb}
 ${color0}Inbound connections: $color${tcp_portmon 1 32767 count}   ${color0}Outbound connections: $color${tcp_portmon 32768 61000 count}
 ${voffset 5}${color0}Proto  Address ${goto 222}Name${color1}${font DejaVu Sans Mono:bold:size=8}
-${execpi 6 ruby /home/ken/conky/scripts/netstat.rb}
+${execpi 6 ruby netstat.rb}
 ]];
