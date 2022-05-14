@@ -123,6 +123,11 @@ ${color}Up: ${offset 40}${upspeed enp5s0}
 ${color black}${upspeedgraph enp5s0 999999 CC0000}
 --#${color0}${execpi 10 ruby network_general_info.rb}
 ${color0}Inbound connections: $color${tcp_portmon 1 32767 count}   ${color0}Outbound connections: $color${tcp_portmon 32768 61000 count}
-${voffset 5}${color0}Proto  Address ${goto 222}Name${color1}${font DejaVu Sans Mono:bold:size=8}
-${execpi 6 ruby netstat.rb}
+${voffset 5}${color red}Temperatures${color1}${font DejaVu Sans Mono:bold:size=8}
+GPU Fan: ${exec sensors | grep 'fan1' | cut -c14-17} RPM
+GPU Power: ${exec sensors | grep 'power1' | cut -c14-16}W
+
+GPU edgeTemp: ${exec sensors | grep 'edge' | cut -c16-17}C
+GPU jctTemp: ${exec sensors | grep 'junction' | cut -c16-17}C
+GPU memTemp: ${exec sensors | grep 'mem' | cut -c16-17}C
 ]];
